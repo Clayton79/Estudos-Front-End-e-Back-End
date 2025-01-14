@@ -21,4 +21,4 @@ const menorSalarioChinesF = funcionarios.map(function(e) {
 
 
 
-// fiz só peguei o salario menor de tudo só falta pegar a mulher da china
+// fiz só peguei o salario menor de tudo, só falta pegar a mulher e que seja chinesa ela.
