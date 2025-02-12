@@ -24,8 +24,73 @@ public class calculadora {
 
             if(opcao >= 1 && opcao <= 4) {
                 
+                // Resgatar os numeros do usuario
+                System.out.println("Digite o primeiro número: ");
+                double num1 = scanner.nextDouble();
+                System.out.println("Digite o segundo número: ");
+                double num2 = scanner.nextDouble();
+
+                double resultado = 0;
+
+                boolean operacaoValida = true;
+
+                System.out.println(num1 + " " + num2);
+
+                // Econtrar o resultado
+                switch (opcao) {
+                    case 1:
+                        resultado = adicionar(num1, num2);
+                        break;
+                    case 2:
+                        resultado = subtrair(num1, num2);
+                        break;
+                    case 3:
+                        resultado = multiplicar(num1, num2);
+                        break;
+                    case 4:
+                        if(num2 != 0) {
+                            resultado = dividir(num1, num2);
+                        }else {
+                            System.out.println("Divisão por 0:");
+                            operacaoValida = false;
+                        }
+                        break;
+                    
+                    default:
+                        operacaoValida = false;
+                        break;
+                }
+                
+                // Mostrar o resultado
+                if(operacaoValida) {
+                    System.out.println("Resultado: " + resultado);
+                }
+
+            }else if(opcao != 0) {
+                System.out.println("Opção inválida.");
             }
             
         }while(opcao != 0);
+
+        // Liberar recursos da memoria.
+        System.out.println("Calculadora encerrada!");
+        scanner.close();
+    }
+
+    // Operações
+    public static double adicionar(double a, double b) {
+        return a + b; 
+    }
+
+    public static double subtrair(double a, double b) {
+        return a - b; 
+    }
+
+    public static double multiplicar(double a, double b) {
+        return a * b; 
+    }
+
+    public static double dividir(double a, double b) {
+        return a / b; 
     }
 }
